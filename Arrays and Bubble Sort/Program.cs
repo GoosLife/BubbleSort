@@ -25,12 +25,13 @@ namespace Arrays_and_Bubble_Sort
 
             for (int i = 0; i < randomValues.Length; i++)
             {
-                for (int j = 0; j < randomValues.Length; j++)
+                for (int j = 0; j < ((randomValues.Length - 1) - i); j++)
                 {
-                    if (randomValues[j] > randomValues[i])
+                    if (randomValues[j] > randomValues[j+1])
                     {
-                        int placeholder = randomValues[i];
-                        randomValues[i] = randomValues[j];
+                        // Swap values
+                        int placeholder = randomValues[j+1];
+                        randomValues[j+1] = randomValues[j];
                         randomValues[j] = placeholder;
                     }
                 }
